@@ -45,11 +45,13 @@ public class CashRegister {
 			}
 			changeDue = changeDue % 1;
 			changeDue = Math.round(changeDue * 100.0) / 100.0; 
+			
 			quartersDue =  (int) (changeDue / .25);
 			if (quartersDue > 0 && quartersDue <= 1 ) {
 				System.out.println(quartersDue +  " quarter");
 			}
-			else {System.out.println(quartersDue +  " quarters");
+			else if (quartersDue > 0) {
+				System.out.println(quartersDue +  " quarters");
 			}
 			changeDue = changeDue % .25;
 			changeDue = Math.round(changeDue * 100.0) / 100.0;
@@ -59,7 +61,7 @@ public class CashRegister {
 			if (dimesDue > 0 && dimesDue <= 1) {
 				System.out.println(dimesDue +  " dime");
 			}
-			else {
+			else if (dimesDue > 0) {
 				System.out.println(dimesDue +  " dimes");
 			}
 			changeDue = changeDue % .10;
@@ -70,7 +72,7 @@ public class CashRegister {
 			if (nickelsDue > 0 && nickelsDue <= 1) {
 			System.out.println(nickelsDue +  " nickel");
 			}
-			else {
+			else if (nickelsDue > 0) {
 				System.out.println(nickelsDue +  " nickels");
 			}
 			changeDue = changeDue % .05;
@@ -81,14 +83,12 @@ public class CashRegister {
 			if (penniesDue > 0 && penniesDue <= 1) {
 			System.out.println(penniesDue +  " penny");
 			}
-			else {
+			else if (penniesDue > 0){
 				System.out.println(penniesDue +  " pennies");
 			}
-			
 		}
 		input.close();
 	}
-
 }
 
 /*
